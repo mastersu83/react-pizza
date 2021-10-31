@@ -1,0 +1,135 @@
+let initialState = {
+	pizzaBlocks: [
+		{
+			id: 1,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 2,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 3,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 4,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 5,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 6,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 7,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 8,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+		{
+			id: 9,
+			image:
+				"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			title: "Чизбургер-пицца",
+			dough1: "тонкое",
+			dough2: "традиционное",
+			size26: "26 см.",
+			size30: "30 см.",
+			size40: "40 см.",
+			price: "от 395 ₽",
+			add: "Добавить",
+			pieces: 2,
+		},
+	],
+};
+
+const pizzaReducer = (state = initialState, action) => {
+	return state;
+};
+export default pizzaReducer;
