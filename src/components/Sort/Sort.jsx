@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 const Sort = (props) => {
+	// const [popup, setPopup] = useState(false);
+	// let openPopupNew = () => {
+	// 	setPopup(!popup);
+	// };
+
 	let openPopup = () => {
-		props.openPopup(props.popup);
+		props.openPopup(props.sortState.popup);
 	};
 
-	const [active, setActive] = useState(0);
-	let changeActive = (index) => {
-		setActive(index);
-		setPopup(!popup);
+	let sortActive = (index) => {
+		props.sortActive(index);
 	};
 
-	let sortItem = props.sort.map((e, index) => (
+	// const [active, setActive] = useState(0);
+
+	// let changeActive = (index) => {
+	// 	setActive(index);
+	// };
+
+	let sortItem = props.sortState.sort.map((e, index) => (
 		<li
 			key={`${e.id}_${index}`}
-			className={active === index ? 'active' : ''}
-			onClick={() => changeActive(index)}
+			className={props.sortState.currentIndex === index ? 'active' : ''}
+			onClick={() => sortActive(index)}
 		>
 			{e.name}
 		</li>
@@ -37,10 +46,12 @@ const Sort = (props) => {
 					/>
 				</svg>
 				<b>Сортировка по:</b>
-				<span onClick={openPopup}>{props.sort[active].name}</span>
+				<span onClick={openPopup}>
+					{props.sortState.sort[props.sortState.currentIndex].name}
+				</span>
 			</div>
 
-			<div className={`sort__popup ${props.popup ? 'open' : ''}`}>
+			<div className={`sort__popup ${props.sortState.popup ? 'open' : ''}`}>
 				<ul>{sortItem}</ul>
 			</div>
 		</div>
