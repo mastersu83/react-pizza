@@ -1,21 +1,15 @@
-import React from 'react';
-import CategoriesContainer from '../Categories/CategoriesContainer';
-import PizzaBlocksContainer from '../PizzaBlocks/PizzaBlocksContainer';
-import SortContainer from '../Sort/SortContainer';
+import React from "react";
+import { Cart, CartEmpty, HomeContainer } from "../../pages";
+import { Route } from "react-router-dom";
 
 const Content = (props) => {
-	return (
-		<div className='content'>
-			<div className='container'>
-				<div className='content__top'>
-					<CategoriesContainer />
-					<SortContainer />
-				</div>
-				<h2 className='content__title'>Все пиццы</h2>
-				<PizzaBlocksContainer />
-			</div>
-		</div>
-	);
+  return (
+    <div className="content">
+      <Route exact path="/" component={HomeContainer} />
+      <Route exact path="/cart" component={Cart} />
+      <Route exact path="/cartempty" component={CartEmpty} />
+    </div>
+  );
 };
 
 export default Content;

@@ -1,35 +1,42 @@
-import React, { useState } from 'react';
+import React from "react";
 
 const Categories = (props) => {
-	const [active, setActive] = useState(null);
-	let changeActive = (index) => {
-		setActive(index);
-	};
+  // console.log(props);
+  const [active, setActive] = React.useState(0);
+  let changeActive = (index) => {
+    setActive(index);
+    props.categoriesActive(index);
+    currentCategories(index);
+  };
 
-	let categoriesButton = props.categories.categories.map((c, index) => (
-		<li
-			active={active}
-			index={index}
-			key={`${c.id}_${index}`}
-			className={active === index ? 'active' : ''}
-			onClick={() => changeActive(index)}
-		>
-			{c.name}
-		</li>
-	));
-	return (
-		<div className='categories'>
-			<ul>
-				<li
-					className={active === null ? 'active' : ''}
-					onClick={() => changeActive(null)}
-				>
-					Все
-				</li>
-				{categoriesButton}
-			</ul>
-		</div>
-	);
+  let currentCatState = [];
+
+  const currentCategories = (index) => {
+    let currentCat = index;
+    currentCatState = props.pizza.map((e) => {
+      if (props.categories.categories[currentCat].categories === e.categories) {
+        currentCatState.push(e);
+        props.newPizzaBlocks(currentCatState);
+      } else if (props.categories.categories[currentCat].categories === 0) {
+        props.newPizzaBlocks(props.pizza);
+      }
+    });
+  };
+
+  let categoriesButton = props.categories.categories.map((c, index) => (
+    <li
+      key={`${c.id}_${index}`}
+      className={active === index ? "active" : ""}
+      onClick={() => changeActive(index)}
+    >
+      {c.name}
+    </li>
+  ));
+  return (
+    <div className="categories">
+      <ul>{categoriesButton}</ul>
+    </div>
+  );
 };
 
 export default Categories;
