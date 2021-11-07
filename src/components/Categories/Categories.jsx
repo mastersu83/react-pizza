@@ -1,7 +1,6 @@
 import React from "react";
 
 const Categories = (props) => {
-  // console.log(props);
   const [active, setActive] = React.useState(0);
   let changeActive = (index) => {
     setActive(index);
@@ -12,14 +11,14 @@ const Categories = (props) => {
   let currentCatState = [];
 
   const currentCategories = (index) => {
-    let currentCat = index;
-    currentCatState = props.pizza.map((e) => {
-      if (props.categories.categories[currentCat].categories === e.categories) {
+    currentCatState = props.pizza.items.map((e) => {
+      if (props.categories.categories[index].categories === e.categories) {
         currentCatState.push(e);
         props.newPizzaBlocks(currentCatState);
-      } else if (props.categories.categories[currentCat].categories === 0) {
-        props.newPizzaBlocks(props.pizza);
+      } else if (props.categories.categories[index].categories === 0) {
+        props.newPizzaBlocks(props.pizza.items);
       }
+      return currentCatState;
     });
   };
 

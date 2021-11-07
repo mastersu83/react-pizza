@@ -1,4 +1,7 @@
+import { usersAPI } from "../api/api";
 const NEW_PIZZABLOCK = "NEW_PIZZABLOCK";
+const NEW_PIZZAITEMS = "NEW_PIZZAITEMS";
+const SET_ACTIVE_TYPE = "SET_ACTIVE_TYPE";
 
 let initialState = {
   pizzaBlocks: [
@@ -123,6 +126,10 @@ let initialState = {
       categories: 2,
     },
   ],
+  type: ["тонкое", "традиционное"],
+  size: [26, 30, 40],
+  activeType: 0,
+  items: [],
   currentPizzaBlock: [],
 };
 
@@ -133,15 +140,42 @@ const pizzaReducer = (state = initialState, action) => {
         ...state,
         currentPizzaBlock: action.newBlock,
       };
+    case NEW_PIZZAITEMS:
+      return {
+        ...state,
+        items: [...action.newItems],
+      };
+    case SET_ACTIVE_TYPE:
+      return {
+        ...state,
+        activeType: action.index,
+      };
 
     default:
       return state;
   }
 };
 
+export const setActiveType = (index) => ({
+  type: SET_ACTIVE_TYPE,
+  index,
+});
+
 export const newPizzaBlocks = (newBlock) => ({
   type: NEW_PIZZABLOCK,
   newBlock,
 });
+export const newPizzaItems = (newItems) => ({
+  type: NEW_PIZZAITEMS,
+  newItems,
+});
+
+export const getPizzaItemsThunk = () => {
+  return (dispatch) => {
+    usersAPI.getPizzas().then((items) => {
+      dispatch(newPizzaItems(items));
+    });
+  };
+};
 
 export default pizzaReducer;

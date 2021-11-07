@@ -1,23 +1,54 @@
 import React from "react";
+import classNames from "classnames";
 
 const PizzaBlock = (props) => {
+  console.log(props);
+  const [activeType, setActiveType] = React.useState(0);
+  const onChangeActiveType = (index) => {
+    setActiveType(index);
+    // props.setActiveType(index);
+  };
+  const [activeSize, setActiveSize] = React.useState(0);
+  const onChangeActiveSize = (index) => {
+    setActiveSize(index);
+    // props.setActiveType(index);
+  };
   return (
     <div className="pizza-block">
-      <img className="pizza-block__image" src={props.image} alt="Pizza" />
-      <h4 className="pizza-block__title">{props.title}</h4>
+      <img className="pizza-block__image" src={props.imageUrl} alt="Pizza" />
+      <h4 className="pizza-block__title">{props.name}</h4>
       <div className="pizza-block__selector">
         <ul>
-          <li className="active">{props.dough1}</li>
-          <li>{props.dough2}</li>
+          {props.type.map((s, index) => (
+            <li
+              onClick={() => onChangeActiveType(index)}
+              className={classNames({
+                active: activeType === index,
+                disable: !props.types.includes(index),
+              })}
+              key={s}
+            >
+              {s}
+            </li>
+          ))}
         </ul>
         <ul>
-          <li className="active">{props.size26}</li>
-          <li>{props.size30}</li>
-          <li>{props.size40}</li>
+          {props.size.map((s, index) => (
+            <li
+              onClick={() => onChangeActiveSize(index)}
+              className={classNames({
+                active: activeSize === index,
+                disable: !props.sizes.includes(s),
+              })}
+              key={s}
+            >
+              {s} см.
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">{props.price}</div>
+        <div className="pizza-block__price">{props.price} руб.</div>
         <div className="button button--outline button--add">
           <svg
             width="12"
@@ -31,8 +62,8 @@ const PizzaBlock = (props) => {
               fill="white"
             />
           </svg>
-          <span>{props.add}</span>
-          <i>{props.pieces}</i>
+          <span>Добавить</span>
+          <i>2</i>
         </div>
       </div>
     </div>

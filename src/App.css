@@ -444,6 +444,11 @@ a {
   cursor: auto;
 }
 
+.pizza-block__selector ul li.disable {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .pizza-block__bottom {
   display: flex;
   align-items: center;
