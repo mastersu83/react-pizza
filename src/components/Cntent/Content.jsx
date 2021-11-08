@@ -2,7 +2,7 @@ import React from "react";
 import { Cart, CartEmpty, HomeContainer } from "../../pages";
 import { Route } from "react-router-dom";
 
-const Content = (props) => {
+const Content = () => {
   return (
     <div className="content">
       <Route exact path="/" component={HomeContainer} />

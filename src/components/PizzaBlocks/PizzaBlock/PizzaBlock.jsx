@@ -2,16 +2,13 @@ import React from "react";
 import classNames from "classnames";
 
 const PizzaBlock = (props) => {
-  console.log(props);
-  const [activeType, setActiveType] = React.useState(0);
+  const [activeType, setActiveType] = React.useState(props.types[0]);
   const onChangeActiveType = (index) => {
     setActiveType(index);
-    // props.setActiveType(index);
   };
   const [activeSize, setActiveSize] = React.useState(0);
   const onChangeActiveSize = (index) => {
     setActiveSize(index);
-    // props.setActiveType(index);
   };
   return (
     <div className="pizza-block">

@@ -1,11 +1,6 @@
 import React from "react";
 
 const Sort = (props) => {
-  // const [popup, setPopup] = useState(false);
-  // let openPopupNew = () => {
-  // 	setPopup(!popup);
-  // };
-
   let openPopup = () => {
     props.openPopup(props.sortState.popup);
   };
@@ -14,18 +9,6 @@ const Sort = (props) => {
     props.sortActive(index);
     openPopup();
   };
-
-  let sortRef = React.useRef();
-
-  const handleOutsideClick = (e) => {
-    if (!e.path.includes(sortRef.current)) {
-      props.openPopup(true);
-    }
-  };
-
-  React.useEffect(() => {
-    document.body.addEventListener("click", handleOutsideClick);
-  }, []);
 
   let sortItem = props.sortState.sort.map((e, index) => (
     <li
@@ -38,7 +21,7 @@ const Sort = (props) => {
   ));
 
   return (
-    <div ref={sortRef} className="sort">
+    <div className="sort">
       <div className="sort__label">
         <svg
           className={props.sortState.popup ? "roteted" : ""}
@@ -60,8 +43,14 @@ const Sort = (props) => {
       </div>
 
       <div className={`sort__popup ${props.sortState.popup ? "open" : ""}`}>
-        <ul>{sortItem}</ul>
+        <div className="sort_content">
+          <ul>{sortItem}</ul>
+        </div>
       </div>
+      <div
+        className={`overlay ${props.sortState.popup ? "open" : ""}`}
+        onClick={openPopup}
+      />
     </div>
   );
 };
