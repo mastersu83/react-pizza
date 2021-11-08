@@ -23,7 +23,6 @@ const categoriesReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export const categoriesActive = (index) => ({ type: CATEGORIES_ACTIVE, index });
+// export const categoriesActive = (index) => ({ type: CATEGORIES_ACTIVE, index });
 
 export default categoriesReducer;

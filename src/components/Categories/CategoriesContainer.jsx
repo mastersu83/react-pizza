@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import Categories from "./Categories";
-import { categoriesActive } from "../../Redux/categories_reducer";
+
 import { newPizzaBlocks, newPizzaItems } from "../../Redux/pizza_reducer";
+import { categoriesActive } from "../../Redux/actions/categories";
 
 let mapStateToProps = (state) => {
   return {
@@ -10,9 +11,9 @@ let mapStateToProps = (state) => {
   };
 };
 const CategoriesContainer = connect(mapStateToProps, {
-  categoriesActive,
   newPizzaItems,
   newPizzaBlocks,
+  categoriesActive,
 })(Categories);
 
 export default CategoriesContainer;

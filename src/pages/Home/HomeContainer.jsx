@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { categoriesActive } from "../../Redux/categories_reducer";
+import { categoriesActive } from "../../Redux/actions/categories";
 import { Home } from "../index";
 
 let mapStateToProps = (state) => {
