@@ -1,5 +1,3 @@
-const CATEGORIES_ACTIVE = "CATEGORIES_ACTIVE";
-
 let initialState = {
   categories: [
     { id: 0, name: "Все", categories: 0 },
@@ -12,9 +10,9 @@ let initialState = {
   currentIndex: 0,
 };
 
-const categoriesReducer = (state = initialState, action) => {
+const categories = (state = initialState, action) => {
   switch (action.type) {
-    case CATEGORIES_ACTIVE:
+    case "CATEGORIES_ACTIVE":
       return {
         ...state,
         currentIndex: action.index,
@@ -23,6 +21,5 @@ const categoriesReducer = (state = initialState, action) => {
       return state;
   }
 };
-// export const categoriesActive = (index) => ({ type: CATEGORIES_ACTIVE, index });
 
-export default categoriesReducer;
+export default categories;

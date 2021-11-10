@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/img/pizza-logo.svg";
 import { Link, Route } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header">
       <div className="container">
@@ -15,6 +15,11 @@ const Header = () => {
                   Назад
                 </h1>
               </Route>
+              <Route path="/cartempty" exact>
+                <h1 style={{ marginTop: 5 + "px", marginLeft: 10 + "px" }}>
+                  Назад
+                </h1>
+              </Route>
               <Route path="/" exact>
                 <h1>React Pizza</h1>
                 <p>самая вкусная пицца во вселенной</p>
@@ -23,7 +28,10 @@ const Header = () => {
           </div>
         </Link>
         <div className="header__cart">
-          <Link to="/cart" className="button button--cart">
+          <Link
+            to={`${props.cart.cart.length ? "/cart" : "/cartempty"}`}
+            className="button button--cart"
+          >
             <span>520 ₽</span>
             <div className="button__delimiter" />
             <svg

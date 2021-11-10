@@ -1,4 +1,4 @@
-export { default as Content } from "./Cntent/Content";
+export { default as Content } from "./Content/Content";
 export { default as CategoriesContainer } from "./Categories/CategoriesContainer";
 export { default as Header } from "./Header/Header";
 export { default as PizzaBlock } from "./PizzaBlocks/PizzaBlock/PizzaBlock";

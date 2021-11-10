@@ -1,13 +1,14 @@
 import "./App.css";
 
 import React from "react";
-import { Content, Header } from "./components";
+import ContentContainer from "./components/Content/ContentContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="wrapper">
-      <Header />
-      <Content />
+      <HeaderContainer />
+      <ContentContainer />
     </div>
   );
 };

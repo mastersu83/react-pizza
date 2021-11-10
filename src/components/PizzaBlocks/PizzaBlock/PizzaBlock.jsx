@@ -10,6 +10,7 @@ const PizzaBlock = (props) => {
   const onChangeActiveSize = (index) => {
     setActiveSize(index);
   };
+
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={props.imageUrl} alt="Pizza" />
@@ -44,7 +45,10 @@ const PizzaBlock = (props) => {
           ))}
         </ul>
       </div>
-      <div className="pizza-block__bottom">
+      <div
+        onClick={() => props.addPizza(props.index)}
+        className="pizza-block__bottom"
+      >
         <div className="pizza-block__price">{props.price} руб.</div>
         <div className="button button--outline button--add">
           <svg

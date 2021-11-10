@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Sort from "./Sort";
-import { openPopup, sortActive } from "../../Redux/sort_reducer";
+import { openPopup, sortActive } from "../../Redux/actions/sort";
 
 let mapStateToProps = (state) => {
   return {
