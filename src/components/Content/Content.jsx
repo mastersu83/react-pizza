@@ -8,7 +8,7 @@ const Content = () => {
     <div className="content">
       <Route exact path="/" component={HomeContainer} />
       <Route exact path="/cart" component={CartContainer} />
-      <Route exact path="/cartempty" render={CartEmpty} />
+      <Route exact path="/cartempty" component={CartEmpty} />
     </div>
   );
 };

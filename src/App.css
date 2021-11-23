@@ -402,17 +402,6 @@ a {
   width: 280px;
   text-align: center;
   margin-bottom: 65px;
-  opacity: 0;
-  animation: ani 2.5s forwards;
-}
-
-@keyframes ani {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .pizza-block:not(:nth-of-type(4n)) {

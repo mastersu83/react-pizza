@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
+import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import pizza from "./redusers/pizza";
 import categories from "./redusers/categories";
 import sort from "./redusers/sort";
@@ -11,8 +11,12 @@ let reducers = combineReducers({
   sort,
   cart,
 });
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+let store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(thunkMiddleware))
+);
 window.store = store;
 
 export default store;

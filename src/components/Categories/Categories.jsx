@@ -11,7 +11,7 @@ const Categories = (props) => {
 
   let currentCatState = [];
 
-  const currentCategories = (index) => {
+      const currentCategories = (index) => {
     currentCatState = props.items.map((e) => {
       if (props.categories.categories[index].categories === e.categories) {
         currentCatState.push(e);

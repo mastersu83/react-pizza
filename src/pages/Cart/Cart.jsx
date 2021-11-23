@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  console.log(props);
   let cartItem = props.cart.cart.map((i) => <CartItem key={i.id} {...i} />);
 
   return (
