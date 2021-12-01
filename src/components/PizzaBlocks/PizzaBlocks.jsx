@@ -4,7 +4,6 @@ import React from "react";
 const PizzaBlocks = (props) => {
   const addCartPizza = (e) => {
     props.addPizza(props.items[e]);
-    console.log(props.items[e]);
   };
 
   let pizzaElements;
