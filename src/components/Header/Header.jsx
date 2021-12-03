@@ -15,7 +15,7 @@ const Header = (props) => {
                   Назад
                 </h1>
               </Route>
-              <Route path="/cartempty" exact>
+              <Route path="/cartEmpty" exact>
                 <h1 style={{ marginTop: 5 + "px", marginLeft: 10 + "px" }}>
                   Назад
                 </h1>
@@ -29,7 +29,7 @@ const Header = (props) => {
         </Link>
         <div className="header__cart">
           <Link
-            to={`${props.cart.cart.length ? "/cart" : "/cartempty"}`}
+            to={`${props.cart.cart.length ? "/cart" : "/cartEmpty"}`}
             className="button button--cart"
           >
             <span>520 ₽</span>
